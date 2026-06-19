@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/infiniti/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/custom/config/common_full_phone.mk)
 
 PRODUCT_NAME := lineage_infiniti
 PRODUCT_DEVICE := infiniti
@@ -29,3 +29,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=CPH2745 \
     SystemDevice=OP611FL1 \
     SystemName=CPH2745
+    
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_DISABLE_EPPE := true
+TARGET_CUSTOM_UDFPS := true
