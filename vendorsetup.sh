@@ -153,10 +153,10 @@ show_tree_legend() {
     echo -e "  ${CYAN}├──${RESET} ${BBLUE}device/oneplus/${RESET}"
     echo -e "  ${CYAN}│  ├──${RESET} ${BWHITE}infiniti${RESET}                ${DIM}← Main OnePlus 15 Device Tree (Manual)${RESET}"
     echo -e "  ${CYAN}│  ├──${RESET} ${BWHITE}infiniti-kernel${RESET}         ${DIM}← Prebuilt kernel & modules${RESET}"
-    echo -e "  ${CYAN}│  └──${RESET} ${BWHITE}sm8850-common${RESET}           ${DIM}← Platform common tree${RESET}"
+    echo -e "  ${CYAN}│  └──${RESET} ${BWHITE}sm8850-common${RESET}            ${DIM}← Platform common tree${RESET}"
     echo -e "  ${CYAN}│${RESET}"
     echo -e "  ${CYAN}├──${RESET} ${BBLUE}device/qcom/${RESET}"
-    echo -e "  ${CYAN}│  └──${RESET} ${BWHITE}sepolicy_vndr${RESET}           ${DIM}← QCOM SEPolicy Blobs${RESET}"
+    echo -e "  ${CYAN}│  └──${RESET} ${BWHITE}sepolicy_vndr${RESET}            ${DIM}← QCOM SEPolicy Blobs${RESET}"
     echo -e "  ${CYAN}│${RESET}"
     echo -e "  ${CYAN}├──${RESET} ${BMAGENTA}hardware/qcom-caf/${RESET}"
     echo -e "  ${CYAN}│  ├──${RESET} ${BWHITE}common${RESET}                  ${DIM}← QCOM common HALs${RESET}"
@@ -164,9 +164,9 @@ show_tree_legend() {
     echo -e "  ${CYAN}│${RESET}"
     echo -e "  ${CYAN}├──${RESET} ${BGREEN}vendor/oneplus/${RESET}"
     echo -e "  ${CYAN}│  ├──${RESET} ${BWHITE}infiniti${RESET}                ${DIM}← OnePlus 15 specific blobs${RESET}"
-    echo -e "  ${CYAN}│  └──${RESET} ${BWHITE}sm8850-common${RESET}           ${DIM}← Common vendor blobs${RESET}"
+    echo -e "  ${CYAN}│  └──${RESET} ${BWHITE}sm8850-common${RESET}            ${DIM}← Common vendor blobs${RESET}"
     echo -e "  ${CYAN}│${RESET}"
-    echo -e "  ${CYAN}└──${RESET} ${BYELLOW}kernel/oneplus/sm8850${RESET}       ${DIM}← AOSP Common Kernel${RESET}"
+    echo -e "  ${CYAN}└──${RESET} ${BYELLOW}kernel/oneplus/sm8850${RESET}        ${DIM}← AOSP Common Kernel${RESET}"
     echo ""
     hr "$BMAGENTA"
     echo ""
@@ -178,21 +178,23 @@ echo ""
 
 # Device dependencies (FULL CLONE)
 clone_repo "OnePlus 15 Kernel Tree" "device/oneplus/infiniti-kernel" "https://github.com/OnePlus-SM8850-Development/android_device_oneplus_infiniti-kernel.git" "" "FULL"
-clone_repo "SM8850 Common Device" "device/oneplus/sm8850-common" "https://github.com/OnePlus-SM8850-Development/android_device_oneplus_sm8850-common.git" "" "FULL"
+# 🔴 FIXED: PixelOS branch assigned properly
+clone_repo "SM8850 Common Device" "device/oneplus/sm8850-common" "https://github.com/oneplus-sm8850-infiniti/android_device_oneplus_sm8850-common.git" "PixelOS" "FULL"
 clone_repo "QCOM SEPolicy Vendor" "device/qcom/sepolicy_vndr/sm8850" "https://github.com/OnePlus-SM8850-Development/android_device_qcom_sepolicy_vndr.git" "" "FULL"
 
 # Vendor dependencies (FULL CLONE)
 clone_repo "OnePlus 15 Vendor Tree" "vendor/oneplus/infiniti" "https://github.com/OnePlus-SM8850-Development/proprietary_vendor_oneplus_infiniti.git" "" "FULL"
 clone_repo "SM8850 Common Vendor" "vendor/oneplus/sm8850-common" "https://github.com/OnePlus-SM8850-Development/proprietary_vendor_oneplus_sm8850-common.git" "" "FULL"
-clone_repo "Lineage Vendor" "vendor/lineage" "https://github.com/OnePlus-SM8850-Development/android_vendor_lineage.git" "" "FULL"
 clone_repo "QCOM USB Vendor" "vendor/qcom/opensource/usb" "https://github.com/OnePlus-SM8850-Development/android_vendor_qcom_opensource_usb.git" "" "FULL"
 
 # Hardware dependencies (FULL CLONE)
-clone_repo "Lineage Compat" "hardware/lineage/compat" "https://github.com/OnePlus-SM8850-Development/android_hardware_lineage_compat.git" "" "FULL"
+# 🔴 FIXED: PixelOS branch assigned properly
+clone_repo "Lineage Compat" "hardware/lineage/compat" "https://github.com/oneplus-sm8850-infiniti/android_hardware_lineage_compat.git" "PixelOS" "FULL"
 clone_repo "QCOM CAF Common" "hardware/qcom-caf/common" "https://github.com/OnePlus-SM8850-Development/android_hardware_qcom-caf_common.git" "" "FULL"
 clone_repo "QCOM Audio HAL" "hardware/qcom-caf/sm8850/audio/primary-hal" "https://github.com/OnePlus-SM8850-Development/android_hardware_qcom_audio-ar.git" "lineage-23.2-caf-sm8850" "FULL"
 clone_repo "QCOM Thermal" "hardware/qcom-caf/thermal" "https://github.com/OnePlus-SM8850-Development/android_hardware_qcom_thermal.git" "" "FULL"
-clone_repo "Hardware Oplus" "hardware/oplus" "https://github.com/OnePlus-SM8850-Development/android_hardware_oplus.git" "" "FULL"
+# 🔴 FIXED: PixelOS branch assigned properly
+clone_repo "Hardware Oplus" "hardware/oplus" "https://github.com/oneplus-sm8850-infiniti/android_hardware_oplus.git" "PixelOS" "FULL"
 
 # Kernel dependencies (SHALLOW CLONE)
 clone_repo "Common Kernel (AOSP)" "kernel/oneplus/sm8850" "https://android.googlesource.com/kernel/common" "android16-6.12-lts" ""
