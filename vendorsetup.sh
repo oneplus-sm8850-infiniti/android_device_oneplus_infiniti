@@ -64,7 +64,7 @@ BANNER
     echo -e "  ${BMAGENTA}${BOLD}▌${RESET}${BOLD}${BWHITE} O n e P l u s   1 5   ·   C o d e n a m e : ${CYAN}I N F I N I T I${RESET}${BMAGENTA}${BOLD} ▐${RESET}"
     echo ""
     hr "$BBLUE"
-    echo -e "  ${DIM}${CYAN}Snapdragon 8 Gen 4 (sm8850)  ·  Dependency Setup  ·  Raphael Free Zone${RESET}"
+    echo -e "  ${DIM}${CYAN}Snapdragon® 8 Elite Gen 5 (sm8850)  ·  Dependency Setup  ·  Raphael Free Zone${RESET}"
     hr "$BBLUE"
     echo ""
 }
