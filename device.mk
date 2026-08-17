@@ -15,8 +15,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2772
-TARGET_SCREEN_WIDTH := 1272
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
 
 # Display
 PRODUCT_COPY_FILES += \
@@ -86,3 +86,16 @@ $(call inherit-product, device/oneplus/sm8850-common/common.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/infiniti/infiniti-vendor.mk)
+
+# IR Blaster
+$(call inherit-product-if-exists, vendor/oneplus/ir/ir.mk)
+
+# Camera information (multiple sensors supported)
+AXION_CAMERA_REAR_INFO := 50,50,50
+AXION_CAMERA_FRONT_INFO := 32
+
+# Maintainer name (underscores become spaces in the UI)
+AXION_MAINTAINER := Raphael_8E_G5
+
+# Processor name (underscores become spaces)
+AXION_PROCESSOR := Snapdragon®_8_Elite_Gen_5
