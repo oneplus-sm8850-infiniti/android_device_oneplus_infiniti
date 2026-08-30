@@ -29,3 +29,15 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=CPH2745 \
     SystemDevice=OP611FL1 \
     SystemName=CPH2745
+
+# Lunch banner maintainer variable
+PRODUCT_BUILD_PROP_OVERRIDES += \
+RisingMaintainer="Raphael_8E_G5"
+
+# Disable/enable blur support, false by default
+TARGET_ENABLE_BLUR := true
+
+# Whether to ship aperture camera, false by default
+PRODUCT_NO_CAMERA := true
+
+WITH_GMS := true
